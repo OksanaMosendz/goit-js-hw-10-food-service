@@ -4,7 +4,6 @@ import menuTemplate from '../template/menuTemplate.hbs';
 
 const menuList=document.querySelector('.js-menu');
 
-const  createMenu=(json, template, ul)=>
-  {ul.innerHTML=template(json);}
+const createMenu=(json,template,ul)=>ul.innerHTML=template(json);
 
-  createMenu(menuJson, menuTemplate, menuList);
+createMenu(menuJson,menuTemplate,menuList);
