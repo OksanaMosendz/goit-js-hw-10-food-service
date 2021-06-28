@@ -1,20 +1,26 @@
 import {Theme} from './thems.js';
-const body= document.querySelector('body');
+
+const body=document.querySelector('body');
 const themeSwitchToggle=document.querySelector(`#theme-switch-toggle`);
 
-// body.classList.add(Theme.LIGHT);
 const currentTheme=localStorage.getItem("currentTheme");
 
-if (currentTheme){
-  body.classList.add(currentTheme)}
-else {body.classList.add(Theme.LIGHT);}
+const checkCurrentTheme=()=>{
+  if(currentTheme){
+    body.classList.add(currentTheme)
+  }
+  else { body.classList.add(Theme.LIGHT)}
+}
 
+checkCurrentTheme();
 
 const checkthemeSwitchToggle=()=>{
-  if (currentTheme===Theme.DARK)
-  {themeSwitchToggle.checked=true}}
+  if(currentTheme===Theme.DARK){
+    themeSwitchToggle.checked=true
+  }
+}
 
-  checkthemeSwitchToggle();
+checkthemeSwitchToggle();
 
 const changeTheme=()=>{
   if(body.classList.contains(Theme.LIGHT)){
