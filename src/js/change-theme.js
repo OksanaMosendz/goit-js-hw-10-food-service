@@ -2,18 +2,19 @@ import {Theme} from './thems.js';
 const body= document.querySelector('body');
 const themeSwitchToggle=document.querySelector(`#theme-switch-toggle`);
 
+// body.classList.add(Theme.LIGHT);
 const currentTheme=localStorage.getItem("currentTheme");
-body.classList.add(currentTheme);
+
+if (currentTheme){
+  body.classList.add(currentTheme)}
+else {body.classList.add(Theme.LIGHT);}
 
 
 const checkthemeSwitchToggle=()=>{
   if (currentTheme===Theme.DARK)
-  {
-  themeSwitchToggle.checked=true}}
+  {themeSwitchToggle.checked=true}}
 
   checkthemeSwitchToggle();
-
-
 
 const changeTheme=()=>{
   if(body.classList.contains(Theme.LIGHT)){
